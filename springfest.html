@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Spring Fest — Ticket Generator</title>
+
+  
+
+  <link rel="stylesheet" href="springfest.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <a class="brand" href="#home">
+      SPRING<span>FEST</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+
+      <a href="#home">Home</a>
+
+      <a href="#passes">Passes</a>
+
+      <a href="#booking">Book</a>
+
+      <a href="#ticket">Ticket</a>
+
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- Home section -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          IIT KHARAGPUR PRESENTS
+        </p>
+
+        <h1>
+          Spring Fest<span> 2026.</span>
+        </h1>
+
+        <p class="intro">
+          Choose a club performance, enter your details,
+          and generate your ₹200 entry ticket on one
+          continuous scrolling page.
+        </p>
+
+        <a class="button primary" href="#passes">
+          Choose a performance ↓
+        </a>
+
+      </div>
+
+      <div
+        class="orbit"
+        aria-label="Performing clubs"
+      >
+        <span>PRAVAH</span>
+        <span>ENCORE</span>
+        <span>FINESSE</span>
+      </div>
+
+    </section>
+
+    <!-- Performance section -->
+
+    <section class="section" id="passes">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          CHOOSE A PERFORMANCE
+        </p>
+
+        <h2>
+          Three clubs. Three experiences.
+        </h2>
+
+      </div>
+
+      <div class="pass-grid">
+
+        <!-- Pravah -->
+
+        <article class="pass-card pravah-card">
+
+          <span class="pass-label">
+            DRAMA · STAGE · APPLAUSE
+          </span>
+
+          <h3>Pravah</h3>
+
+          <p>
+            A Hindi drama performance bringing powerful
+            stories, characters, and emotions to the stage.
+          </p>
+
+          <strong>₹200</strong>
+
+          <button
+            class="choose-pass"
+            data-pass="Pravah"
+            data-price="200"
+          >
+            Book Pravah
+          </button>
+
+        </article>
+
+        <!-- Encore -->
+
+        <article class="pass-card encore-card featured">
+
+          <span class="pass-label">
+            DRAMA · LANGUAGE · APPLAUSE
+          </span>
+
+          <h3>Encore</h3>
+
+          <p>
+            A live club showcase designed to make the
+            audience ask for one more performance.
+          </p>
+
+          <strong>₹200</strong>
+
+          <button
+            class="choose-pass"
+            data-pass="Encore"
+            data-price="200"
+          >
+            Book Encore
+          </button>
+
+        </article>
+
+        <!-- Finesse -->
+
+        <article class="pass-card finesse-card">
+
+          <span class="pass-label">
+            MODELING · PHOTOGRAPHY · FASHION
+          </span>
+
+          <h3>Finesse</h3>
+
+          <p>
+            A polished club presentation where creativity,
+            style, and detail take centre stage.
+          </p>
+
+          <strong>₹200</strong>
+
+          <button
+            class="choose-pass"
+            data-pass="Finesse"
+            data-price="200"
+          >
+            Book Finesse
+          </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Booking section -->
+
+    <section
+      class="section booking-section"
+      id="booking"
+    >
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          RESERVE YOUR SPOT
+        </p>
+
+        <h2>Booking details</h2>
+
+      </div>
+
+      <form id="ticketForm">
+
+        <div class="form-grid">
+
+          <label>
+            Full name
+
+            <input
+              id="fullName"
+              type="text"
+              placeholder="Enter your name"
+              required
+            >
+          </label>
+
+          <label>
+            Email address
+
+            <input
+              id="email"
+              type="email"
+              placeholder="name@example.com"
+              required
+            >
+          </label>
+
+          <label>
+            Phone number
+
+            <input
+              id="phone"
+              type="tel"
+              inputmode="numeric"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              placeholder="10-digit number"
+              required
+            >
+          </label>
+
+          <label>
+            Number of tickets
+
+            <input
+              id="quantity"
+              type="number"
+              value="1"
+              min="1"
+              max="10"
+              required
+            >
+          </label>
+
+          <!-- Multiple performance selection -->
+
+          <fieldset class="performance-fieldset">
+
+            <legend>
+              Select club performances
+              <small>(choose one or more)</small>
+            </legend>
+
+            <div class="performance-options">
+
+              <label class="performance-choice">
+
+                <span>
+                  <strong>Pravah</strong>
+
+                  <small>
+                    Drama · Stage · Applause
+                  </small>
+                </span>
+
+                <input
+                  class="performance-checkbox"
+                  type="checkbox"
+                  value="Pravah"
+                  data-price="200"
+                >
+
+              </label>
+
+              <label class="performance-choice">
+
+                <span>
+                  <strong>Encore</strong>
+
+                  <small>
+                    Drama · Language · Applause
+                  </small>
+                </span>
+
+                <input
+                  class="performance-checkbox"
+                  type="checkbox"
+                  value="Encore"
+                  data-price="200"
+                >
+
+              </label>
+
+              <label class="performance-choice">
+
+                <span>
+                  <strong>Finesse</strong>
+
+                  <small>
+                    Modeling · Photography · Fashion
+                  </small>
+                </span>
+
+                <input
+                  class="performance-checkbox"
+                  type="checkbox"
+                  value="Finesse"
+                  data-price="200"
+                >
+
+              </label>
+
+            </div>
+
+            <p
+              id="performanceError"
+              class="field-error"
+              hidden
+            >
+              Please select at least one club performance.
+            </p>
+
+          </fieldset>
+
+          <label>
+            Upload photo (optional)
+
+            <input
+              id="photoInput"
+              type="file"
+              accept="image/*"
+            >
+          </label>
+
+        </div>
+
+        <!-- Food section -->
+
+        <div class="food-section">
+
+          <h3>Add food</h3>
+
+          <div class="food-grid">
+
+            <label class="food-item">
+
+              <span>
+                🍕 Pizza
+                <small>₹180</small>
+              </span>
+
+              <input
+                class="food-quantity"
+                data-name="Pizza"
+                data-price="180"
+                type="number"
+                value="0"
+                min="0"
+                max="10"
+              >
+
+            </label>
+
+            <label class="food-item">
+
+              <span>
+                🍔 Burger
+                <small>₹140</small>
+              </span>
+
+              <input
+                class="food-quantity"
+                data-name="Burger"
+                data-price="140"
+                type="number"
+                value="0"
+                min="0"
+                max="10"
+              >
+
+            </label>
+
+            <label class="food-item">
+
+              <span>
+                ☕ Cold Coffee
+                <small>₹80</small>
+              </span>
+
+              <input
+                class="food-quantity"
+                data-name="Cold Coffee"
+                data-price="80"
+                type="number"
+                value="0"
+                min="0"
+                max="10"
+              >
+
+            </label>
+
+          </div>
+
+        </div>
+
+        <div class="total-row">
+
+          <span>Estimated total</span>
+
+          <strong id="liveTotal">
+            ₹0
+          </strong>
+
+        </div>
+
+        <button
+          class="button primary submit-button"
+          type="submit"
+        >
+          Generate my ticket
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- Generated ticket section -->
+
+    <section
+      class="section ticket-section"
+      id="ticket"
+    >
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          YOUR ENTRY PASS
+        </p>
+
+        <h2>Generated ticket</h2>
+
+      </div>
+
+      <div
+        id="emptyTicket"
+        class="empty-ticket"
+      >
+        Complete the booking form above, then press
+        <strong>Generate my ticket</strong>.
+      </div>
+
+      <article
+        id="ticketCard"
+        class="ticket-card"
+        hidden
+      >
+
+        <div class="ticket-main">
+
+          <div class="ticket-title">
+
+            <span>SPRING FEST 2026</span>
+
+            <strong id="ticketPass">
+              ENTRY PASS
+            </strong>
+
+          </div>
+
+          <div class="holder">
+
+            <img
+              id="imagePreview"
+              alt="Ticket holder preview"
+            >
+
+            <div>
+
+              <small>TICKET HOLDER</small>
+
+              <h3 id="ticketName"></h3>
+
+              <p id="ticketEmail"></p>
+
+            </div>
+
+          </div>
+
+          <div class="ticket-details">
+
+            <div>
+
+              <small>DATE</small>
+
+              <strong>18 OCT 2026</strong>
+
+            </div>
+
+            <div>
+
+              <small>TIME</small>
+
+              <strong>6:00 PM</strong>
+
+            </div>
+
+            <div>
+
+              <small>VENUE</small>
+
+              <strong>IIT KHARAGPUR</strong>
+
+            </div>
+
+            <div>
+
+              <small>QUANTITY</small>
+
+              <strong id="ticketQuantity"></strong>
+
+            </div>
+
+          </div>
+
+          <p
+            id="ticketFood"
+            class="food-summary"
+          ></p>
+
+        </div>
+
+        <aside class="ticket-stub">
+
+          <span>ADMIT</span>
+
+          <strong id="stubQuantity"></strong>
+
+          <div
+            class="barcode"
+            aria-label="Decorative barcode"
+          ></div>
+
+          <small id="bookingId"></small>
+
+          <strong id="ticketTotal"></strong>
+
+        </aside>
+
+      </article>
+
+      <button
+        id="printTicket"
+        class="button secondary"
+        type="button"
+        hidden
+      >
+        Print ticket
+      </button>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Spring Fest 2026 · Carry a valid institute ID
+  </footer>
+
+  <script src="springfest.js"></script>
+
+</body>
+
+</html>
